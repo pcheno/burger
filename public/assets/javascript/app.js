@@ -40,16 +40,11 @@ $(".update-burger").on("submit", function (event) {
     event.preventDefault();
 
     var id = $(this).data("id");
-    var newDevoured = $(this).data("newdevoured");
-
-    var newState = {
-        devoured: newDevoured
-    };
 
     // Send the PUT request.
     $.ajax("/api/burgers/" + id, {
         type: "PUT",
-        data: newDevouredState
+        data: {devoured: true}
     }).then(
         function () {
             console.log("modified: " + id);

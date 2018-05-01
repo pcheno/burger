@@ -1,4 +1,4 @@
-var connect = require("./connection.js");
+var connection = require("./connection.js");
 
 function objToSql(ob) {
     var arr = [];
@@ -25,10 +25,11 @@ var orm = {
         var queryString = "SELECT * FROM " + tableInput + ";";
 
         console.log(queryString);
-
+        console.log("\nRIGHT HERE\n");
         connection.query(queryString, function (err, result) {
             if (err) throw err;
             cb(result);
+            console.log(result);
         });
     },
     insertOne: function(table, cols, vals, cb) {

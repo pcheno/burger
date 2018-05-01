@@ -3,7 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 
-var router = require("./controllers/burgers_controller.js");
+
 var burger = require("./models/burgers.js");
 
 // sets up the Express App
@@ -22,6 +22,8 @@ app.set("view engine", "handlebars");
 // sets up the Express app to serve static files
 app.use(express.static(path.join(__dirname, '/public')));
 
+var router = require("./controllers/burgers_controller.js");
+app.use(router);
 // starts the server to begin listening
 app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
