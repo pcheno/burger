@@ -3,8 +3,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 
-var router = require("./controllers/burgers_controllers.js");
-var burger = require("./models/burger.js");
+var router = require("./controllers/burgers_controller.js");
+var burger = require("./models/burgers.js");
 
 // sets up the Express App
 const app = express();
