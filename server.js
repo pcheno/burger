@@ -22,8 +22,6 @@ app.set("view engine", "handlebars");
 // sets up the Express app to serve static files
 app.use(express.static(path.join(__dirname, '/public')));
 
-
-
 // starts the server to begin listening
 app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);

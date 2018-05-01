@@ -37,7 +37,6 @@ $("#addburger").on("submit", function (event) {
 
 //update burger
 $(".update-burger").on("submit", function (event) {
-    // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
     var id = $(this).data("id");
