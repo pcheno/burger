@@ -6,10 +6,10 @@
   {{#each burgers}}
     {{#unless devoured}}
       <li>
-        {{id}}.
+
 				{{burger_name}}
 
-        <button data-burgerid="{{this.id}}" class="update-burger">Devour!</button>
+        <button data-burgerid="{{this.id}}" class="change-burger">Devour</button>
     </li>
     {{/unless}}
   {{/each}}
@@ -21,15 +21,16 @@
   {{#each burgers}}
     {{#if devoured}}
       <li>
-        {{id}}.
+
 				{{burger_name}}
+        <button data-burgerid="{{this.id}}" class="delete-burger">Delete</button>
     </li>
     {{/if}}
   {{/each}}
 </ul>
 
 <h2>Add a Burger</h2>
-<button id="test">Add Burgerx</button>
+
 <form id="addburger" method="post">
 	<div class="form-group">
     <label for="ca">New Burger:</label>

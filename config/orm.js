@@ -25,11 +25,11 @@ var orm = {
         var queryString = "SELECT * FROM " + tableInput + ";";
 
         console.log(queryString);
-        console.log("\nRIGHT HERE\n");
+        
         connection.query(queryString, function (err, result) {
             if (err) throw err;
             cb(result);
-            console.log(result);
+           
         });
     },
     insertOne: function(table, cols, vals, cb) {
@@ -37,10 +37,10 @@ var orm = {
 
         queryString += " (";
         queryString += cols.toString();
-        queryString += ") ";
+        queryString += ",devoured) ";
         queryString += "VALUES ('";
         queryString += vals;
-        queryString += "') ";
+        queryString += "',false) ";
 
         console.log(queryString);
 
@@ -60,6 +60,20 @@ var orm = {
 
         console.log(queryString);
 
+        connection.query(queryString, function (err, result) {
+            if (err) throw err;
+
+            cb(result);
+        });
+    },
+    deleteOne: function(table, condition, cb) {
+        var queryString = "DELETE FROM " + table;
+
+        queryString += " WHERE ";
+        queryString += condition;
+
+        console.log(queryString);
+        
         connection.query(queryString, function (err, result) {
             if (err) throw err;
 
