@@ -13,17 +13,17 @@
           {{/unless}} {{/each}}
         </ul>
       </div>
-      <h2>THESE WERE TASTY</h2>
-
-      <ul>
-        {{#each burgers}} {{#if devoured}}
-        <li>
-
-          {{burger_name}}
-          <button data-burgerid="{{this.id}}" class="delete-burger">Delete</button>
-        </li>
-        {{/if}} {{/each}}
-      </ul>
+      <div class="col-md-6 col-sm-12">
+        <h2>THESE WERE TASTY</h2>
+        <ul>
+          {{#each burgers}} {{#if devoured}}
+          <li>
+            {{burger_name}}
+            <button data-burgerid="{{this.id}}" class="delete-burger">Delete</button>
+          </li>
+          {{/if}} {{/each}}
+        </ul>
+      </div>
     </div>
     <!-- row -->
   </div>
