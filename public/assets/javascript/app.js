@@ -8,7 +8,7 @@ $(".delburger").on("click", function (event) {
     }).then(
         function () {
             console.log("deleted id ", id);
-            location.reload();
+            // location.reload();
         }
     ); //then
 }); //on click
@@ -17,6 +17,7 @@ $(".delburger").on("click", function (event) {
 $("#addburger").on("submit", function (event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
+    console.log('submitted')
 
     let newBurger = {
         burger: $("#burger").val().trim()
