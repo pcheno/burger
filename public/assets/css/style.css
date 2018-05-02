@@ -1,7 +1,11 @@
 body {
     font-family: 'Fredoka One', cursive;
-    background: yellowgreen;
+    background: lightblue;
     text-align: center;
+}
+header {
+    font-size: 210%;
+    background: yellowgreen;
 }
 ul {
     list-style: none;
