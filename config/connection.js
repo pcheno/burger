@@ -2,7 +2,7 @@ require("dotenv").config();
 var mysql = require("mysql");
 
 if (process.env.JAWSDB_URL) {
-    conection = mysql.createConnection(process.env.JAWSDB_URL);
+  var conection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
     var connection = mysql.createConnection({
         host: "localhost",
