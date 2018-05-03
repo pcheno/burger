@@ -16,21 +16,7 @@ const exphbs = require("express-handlebars");
 
 //app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 
-app.engine("handlebars", exphbs({
-  defaultLayout: "main",
-  helpers:{
-    // Function to do basic mathematical operation in handlebar
-    math: function(lvalue, operator, rvalue) {lvalue = parseFloat(lvalue);
-        rvalue = parseFloat(rvalue);
-        return {
-            "+": lvalue + rvalue,
-            "-": lvalue - rvalue,
-            "*": lvalue * rvalue,
-            "/": lvalue / rvalue,
-            "%": lvalue % rvalue
-        }[operator];
-    }
-}}));
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 // sets up the Express app to serve static files
 app.use(express.static(path.join(__dirname, '/public')));
